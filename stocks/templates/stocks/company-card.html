@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'stocks/css/company-card.css' %}" />
+
+<div class="card company-card">
+    <div class="card-body">
+        <h5 class="card-title mx-3 mb-3">{{company_abbreviation|upper}}</h5>
+        <div class="row justify-content-between">
+            <div class="col-6 text-left">
+                <p class="card-text">SMA50</p>
+                <p class="card-text">EMA50</p>
+                <p class="card-text">RSI14</p>
+            </div>
+            <div class="col-6 text-right">
+                <p class="card-text">{{sma}}</p>
+                <p class="card-text">{{ema}}</p>
+                <p class="card-text">{{rsi}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

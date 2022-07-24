@@ -1,0 +1,25 @@
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/darktable.css' %}" />
+{% autoescape  off %}
+<div class="darktable-container">
+    {% if title %}
+    <div class="darktable-container-top">
+        <h2 class="table-title">
+            {{title|safe}}
+        </h2>
+    </div>
+    {% endif%}
+    <div class="darktable-container-content">
+        {{dataframe|safe}}
+    </div>
+    {% if footer%}
+    <div class="darktable-container-top">
+        <h2 class="table-title">
+            {{footer|safe}}
+        </h2>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endautoescape %}

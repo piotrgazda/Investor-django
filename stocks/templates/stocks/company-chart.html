@@ -1,0 +1,35 @@
+
+ <div>
+     <canvas id="myChart"></canvas>
+ </div>
+
+ <script>
+
+     const data = {
+        labels: {{labels|safe}},
+        datasets: [
+         {% for dataset in datasets %}
+            {
+             label: "{{dataset.name}}",
+             backgroundColor: "{{dataset.color}}",
+             borderColor: "{{dataset.color}}",
+             data: {{dataset.data}}
+            },
+         {% endfor %}
+        ],
+     };
+
+     const config = {
+         type: 'line',
+         data: data,
+         options: {}
+     };
+ </script>
+
+
+ <script>
+     const myChart = new Chart(
+         document.getElementById('myChart'),
+         config
+     );
+ </script>

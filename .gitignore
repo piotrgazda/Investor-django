@@ -1,0 +1,6 @@
+.vscode
+*pycache*
+venv
+*.djcache
+db.sqlite3
+*pdf*

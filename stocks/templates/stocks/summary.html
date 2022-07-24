@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'stocks/css/global.css' %}" />
+<div class="d-flex mt-5 justify-content-around " id="">
+
+  <div class="col-5">
+    {{portfolio|safe}}
+  </div>
+
+
+  <div class="col-5">
+    {{companys|safe}}
+  </div>
+
+</div>
+<script>
+  function deleteItem(event) {
+    var companyText = $(event.target).closest("tr").text().split("\n")[1].trim();
+    $(event.target).closest("tr").remove();
+    $.ajax({
+      url: '/delete/followed',
+      type: 'POST',
+      data: {
+        company: companyText,
+        csrfmiddlewaretoken: "{{csrf_token }}",
+      },
+      dataType: 'json',
+      success: function (data) {
+      },
+      error: function (request, error) {
+        console.log("Request error in deleteFollowed: " + JSON.stringify(request));
+      }
+    });
+    event.stopPropagation();
+  }
+  $(document).ready(function () {
+
+    $(".darktable tbody tr").css("cursor", "pointer");
+    $(".darktable tbody tr").click(function () {
+      let cellText = $(this).find("td:first").text();
+      if (cellText != "Total") {
+        window.location.href = '/company/' + cellText;
+      }
+    });
+  });
+</script>
+{% endblock content %}

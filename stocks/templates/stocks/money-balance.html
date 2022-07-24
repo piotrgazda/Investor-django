@@ -1,0 +1,16 @@
+{% load static %}
+
+<link stylesheet <link rel="stylesheet" type="text/css" href="{% static 'stocks/css/money-balance.css' %}" />
+
+<span class="balance-container d-flex">
+
+    <div class="p-1">
+        Portfolio:<br>
+        Earned:
+    </div>
+
+    <div class="p-1">
+        <b>{{portfolio_value|floatformat:2 }}$</b> <br>
+        <b> {{balance|floatformat:2}}$</b>
+    </div>
+</span>

@@ -1,0 +1,11 @@
+{% load static %}
+
+<link stylesheet <link rel="stylesheet" type="text/css" href="{% static 'stocks/css/currency-summary.css' %}" />
+<span class="d-flex ml-5">
+    {% for currency in currencies%}
+
+    <div class="currency-name mr-2">{{currency.0}}</div>
+    <div class="currency-value font-weight-bold mr-4">{{currency.1}}</div>
+
+    {% endfor %}
+</span>

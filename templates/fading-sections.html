@@ -1,0 +1,26 @@
+<ul class="nav nav-pills">
+    {% for name, section in names_sections%}
+    {%if forloop.first%}
+    <li class="nav-item active px-3 mb-1"><a class="nav-link active" data-toggle="tab" href="#{{name}}">{{name|title}}</a></li>
+    {% else %}
+    <li class="nav-item px-3 mb-1"><a class="nav-link" data-toggle="tab" href="#{{name}}">{{name|title}}</a></li>
+    {% endif%}
+    {% endfor %}
+</ul>
+
+
+
+<div class="tab-content">
+
+    {% for name, section in names_sections%}
+    {% if forloop.first %}
+    <div id="{{name}}" class="tab-pane fade in active show">
+        {{section|safe}}
+    </div>
+    {% else %}
+    <div id="{{name}}" class="tab-pane fade">
+        {{section|safe}}
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>

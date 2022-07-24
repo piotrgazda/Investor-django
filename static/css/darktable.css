@@ -1,0 +1,221 @@
+.darktable-container {
+    font-family: 'Noto Sans', Sans-Serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: calc(12px + 2 * ((100vw - 320px) / 880));
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    border-radius: 3px;
+    display: flex;
+    flex-flow: column;
+}
+
+.darktable-container-top {
+    font-family: 'Noto Sans', Sans-Serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: calc(12px + 2 * ((100vw - 320px) / 880));
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    box-sizing: inherit;
+    margin: 0;
+    background: linear-gradient(to bottom, #3c3934, #33312e 100%);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    padding: 0.3em 0.5em;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    padding: 0.3em 0.5em;
+    background: linear-gradient(to bottom, #3c3934, #33312e 100%);
+}
+
+.darktable-container-content {
+    font-family: 'Noto Sans', Sans-Serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: calc(12px + 2 * ((100vw - 320px) / 880));
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    background: #262421;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+.darktable {
+    -webkit-font-smoothing: antialiased;
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: middle;
+    text-align: inherit;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.darktable thead {
+
+    -webkit-font-smoothing: antialiased;
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: inherit;
+    margin: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: middle;
+    text-align: inherit;
+    white-space: nowrap;
+    padding: 0.5em 0.4em;
+    border-top: 1px solid #404040;
+    max-width: 21ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding: 0.3em;
+
+
+}
+
+.darktable tbody {
+    -webkit-font-smoothing: antialiased;
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: middle;
+    text-align: inherit;
+}
+
+.darktable th {
+    padding: 0.5rem 0.4rem
+}
+
+.darktable tr {
+    font-family: 'Noto Sans', Sans-Serif;
+    -webkit-font-smoothing: antialiased;
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: middle;
+    text-align: inherit;
+}
+
+
+.darktable td {
+    -webkit-font-smoothing: antialiased;
+    color: #bababa;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: inherit;
+    margin: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: middle;
+    text-align: inherit;
+    white-space: nowrap;
+    padding: 0.5em 0.4em;
+    border-top: 1px solid #404040;
+    max-width: 21ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 0.7em;
+}
+
+.table-title {
+    -webkit-font-smoothing: antialiased;
+    --site-header-margin: 0px;
+    --site-header-height: 60px;
+    --main-margin: 1vw;
+    --main-max-width: 1400px;
+    box-sizing: inherit;
+    margin: 0;
+    font-family: 'Noto Sans', Sans-Serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #999;
+    padding: 0.3em;
+}
+.darktable tbody tr:nth-child(odd) {
+    background: #302e2c;
+}
+.darktable tbody tr:hover {
+    background: rgba(44,136,221);
+
+}
+.darktable tbody tr:hover td {
+    color: #FFFFFF;
+}
+.darktable-container-content::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+.darktable-container-content::-webkit-scrollbar-track {
+
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+}
+ 
+.darktable-container-content::-webkit-scrollbar-thumb {
+  background-color: rgb(100, 100, 100);
+  border-radius: 4px;
+  outline: 1px solid rgb(30, 30, 30);
+}

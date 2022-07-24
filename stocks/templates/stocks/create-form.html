@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags%}
+{% load static %}
+{% block content %}
+
+
+<div class="row no-gutters mt-4">
+    <div class="col-1"></div>
+    <div class="col-2">
+        <form method="post">
+            {% csrf_token %}
+            {{form|crispy }}
+            <input class="btn btn-primary" type="submit" value="Save"> </input>
+        </form>
+    </div>
+    <div class="col-5"></div>
+    <div class="col-3">
+        {% if items%}
+        {{items | safe}}
+        {%endif%}
+    </div>
+
+
+</div>
+<script>
+    function deleteItem(event) {
+        var companyText = $(event.target).closest("tr").text().split("\n")[1].trim();
+        $(event.target).closest("tr").remove();
+        $.ajax({
+            url: "{{delete_url}}",
+            type: 'POST',
+            data: {
+                company: companyText,
+                csrfmiddlewaretoken: "{{csrf_token }}",
+            },
+            dataType: 'json',
+            success: function (data) {},
+            error: function (request, error) {
+                console.log("Request error in deleteFollowed: " + JSON.stringify(request));
+            }
+        });
+        event.stopPropagation();
+    }
+</script>
+{% endblock content %}

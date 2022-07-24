@@ -1,0 +1,13 @@
+.company-card {
+    background-color: #3c3934;
+    color: #bfbfbf;
+
+}
+.card-title{
+    font-size: 30px;
+    font-weight: bold;
+    color: #eeeeee;
+}
+.card-text{
+    font-size: 22px;
+}

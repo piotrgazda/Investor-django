@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/spinner.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'stocks/css/company-summary.css' %}" />
+
+
+
+<div class="row no-gutters my-5 mx-5 justify-content-around">
+
+  <div class="col-4">
+    {{card|safe}}
+    <div class="row my-3">
+      <div class="col-6">
+        {{earnings_info.0|safe}}
+      </div>
+      <div class="col-6">
+        {{earnings_info.1|safe}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        {{earnings_info.2|safe}}
+      </div>
+    </div>
+  </div>
+  <div class="col-1">
+  </div>
+  <div class="col-6">
+
+
+
+
+
+
+
+
+
+
+    <nav>
+      <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-chart-tab" data-toggle="tab" href="#nav-chart" role="tab"
+          aria-controls="nav-chart" aria-selected="true">Chart</a>
+        <a class="nav-item nav-link" id="nav-financials-tab" data-toggle="tab" href="#nav-financials" role="tab"
+          aria-controls="nav-financials" aria-selected="false">Financials</a>
+      </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-chart" role="tabpanel" aria-labelledby="nav-chart-tab">
+        <div class="chart">
+          {{chart|safe}}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-financials" role="tabpanel" aria-labelledby="nav-financials-tab">
+        <div class="text-center">
+          <button type="button" class="btn btn-success" onclick="loadFinancials()">Load full financials</button>
+          <div id="financials-spinner" class="financials-section text-center justify-content-center"
+            style="display: none">
+            {% include 'spinner.html'%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+{% if earnings_info %}
+
+{% endif%}
+
+
+
+
+<script>
+  function loadFinancials() {
+    const url = window.location.href.slice(0, -1);
+    console.log(url);
+    const company = url.split("/").pop();
+    const endpoint = "/financials/" + company + "/";
+    console.log(endpoint);
+    $("#financials-spinner").show();
+    $.ajax(endpoint, {
+      timeout: 5000,
+      success: function (data, status) {
+        $("#nav-financials").html(data);
+
+      },
+      error: function (textStatus, errorMessage) {
+        console.log("error");
+      }
+    });
+
+  }
+</script>
+{% endblock content %}

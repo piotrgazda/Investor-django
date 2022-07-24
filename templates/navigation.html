@@ -1,0 +1,35 @@
+{%load static%}
+<nav class="navbar navbar-expand-lg bg-transparent align-items-center ml-5">
+    <a class="navbar-brand" href="/">Investor </a <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+        <div class="d-flex align-items-center">
+            
+            {% if currencies%}
+            <li class="nav-item ">
+                {{currencies|safe}}
+            </li>
+            {%endif%}
+
+            {% if balance %}
+            <li class="nav-item">
+                {{balance|safe}}
+            </li>
+            {%endif%}
+        </div>
+    </ul>
+
+    <a href="/create/company">
+        <button class="btn btn-primary mr-5">Create company</button>
+    </a> <a href="/create/follow">
+        <button class="btn btn-primary mr-5">Follow new company</button>
+    </a> <a href="/create/investment">
+        <button class="btn btn-primary mr-5">Add investment</button>
+    </a>
+    <a href="/refresh">
+        <button class="btn btn-primary mr-5">Refresh price data</button>
+    </a>
+    <a href="https://github.com/piotrgazda">
+        <img src=" {% static 'images/github.png' %}" width="32" height="32" class="d-inline-block align-top mr-3"
+            alt="">
+    </a>
+</nav>
